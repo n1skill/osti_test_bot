@@ -21,7 +21,7 @@ def get_message():
 @app.route('/')
 def main():
     bot.remove_webhook()
-    bot.set_webhook(url='https://myyy-bot-1.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://osti-test-bot.herokuapp.com/' + TOKEN)
     return 'Python Telegram Bot', 200
 
 
