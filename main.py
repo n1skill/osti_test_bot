@@ -11,6 +11,7 @@ bot = telebot.TeleBot(TOKEN)
 def message_start(message):
     bot.send_message(message.chat.id, 'Hello, user!')
 
+
 @app.route('/' + TOKEN, methods=['POST'])
 def get_message():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
