@@ -26,6 +26,11 @@ def message_courses(message):
         bot.send_message(message.chat.id, 'List of courses', reply_markup=keyboard)
 
 
+@bot.message_handler(func=lambda x: x.text.lower().startswith('python'))
+def message_text(message)
+    bot.send_message(message.chat.id, 'Ohh, python!')
+
+
 @app.route('/' + TOKEN, methods=['POST'])
 def get_message():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
