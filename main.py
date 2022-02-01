@@ -12,11 +12,6 @@ def message_start(message):
     bot.send_message(message.chat.id, 'Hello, user!')
 
 
-@bot.message_handler(func=lambda x: x.text.lower().startswith('python'))
-def message_text(message):
-    bot.send_message(message.chat.id, 'Ohh, python!')
-
-
 @bot.message_handler(commands=['courses'])
 def message_courses(message):
     keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
@@ -29,6 +24,11 @@ def message_courses(message):
             keyboard.add(url_button)
 
         bot.send_message(message.chat.id, 'List of courses', reply_markup=keyboard)
+
+
+@bot.message_handler(func=lambda x: x.text.lower().startswith('python'))
+def message_text(message):
+    bot.send_message(message.chat.id, 'Ohh, python!')
 
 
 @app.route('/' + TOKEN, methods=['POST'])
