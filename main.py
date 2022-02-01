@@ -13,7 +13,7 @@ def message_start(message):
 
 
 @bot.message_handler(func=lambda x: x.text.lower().startswith('python'))
-def message_text(message)
+def message_text(message):
     bot.send_message(message.chat.id, 'Ohh, python!')
 
 
