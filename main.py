@@ -18,7 +18,9 @@ def message_courses(message):
     keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
 
     with open('courses.txt') as file:
-        bot.send_message(message.chat.id, 'Hello, user! =)')
+        
+        courses = [item for item in file]
+        bot.send_message(message.chat.id, 'Hello, user! =)' + '\n'.join(courses))
     #    courses = [item.split(',') for item in file]
 
      #   for title, link in courses:
