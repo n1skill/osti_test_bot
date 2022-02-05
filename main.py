@@ -19,13 +19,15 @@ def message_courses(message):
 
     with open('courses.txt') as file:
         
-        courses = [item for item in file]
-        bot.send_message(message.chat.id, 'Hello, user! =)' + '\n'.join(courses))
-    #    courses = [item.split(',') for item in file]
-
-     #   for title, link in courses:
-      #      url_button = telebot.types.InlineKeyboardButton(text=title.strip(), url=link.strip())
-       #     keyboard.add(url_button)
+        courses = [item.split(',') for item in file]
+        test = ''
+        for title, link in courses:
+            url_button = telebot.types.InlineKeyboardButton(text=title.strip(), url=link.strip())
+            keyboard.add(url_button)
+            test += title + link
+            
+        
+        bot.send_message(message.chat.id, test)
 
         # bot.send_message(message.chat.id, 'List of courses', reply_markup=keyboard)
 
