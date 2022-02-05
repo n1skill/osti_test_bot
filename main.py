@@ -14,10 +14,11 @@ def message_start(message):
 
 @bot.message_handler(commands=['courses'])
 def message_courses(message):
-    bot.send_message(message.chat.id, 'Hello, user! =)')
-    #keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
+    
+    keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
 
-    #with open('courses.txt') as file:
+    with open('courses.txt') as file:
+        bot.send_message(message.chat.id, 'Hello, user! =)')
     #    courses = [item.split(',') for item in file]
 
      #   for title, link in courses:
